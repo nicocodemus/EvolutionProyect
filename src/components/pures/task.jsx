@@ -1,14 +1,19 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import PropTypes from 'prop-types';
 import { Task } from '../../models/task.class';
 
 
 const TaskComponent = ({task}) => {
 
-
-    const changeState=(id)=>{
-        console.log('pendiente: cambiar estado de una tarea');
-    }
+    useEffect(() => {
+      console.log('tarea creada')
+    
+      return () => {
+        console.log(`la tarea : ${task.name} esta por terminar`);
+      }
+    }, [task])
+    
+    
     return (
         <div>
             <h2>

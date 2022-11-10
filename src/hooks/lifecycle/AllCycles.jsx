@@ -10,13 +10,13 @@ const AllCycles = () => {
         console.log('componente creado')
 
         const intervalId = setInterval(() => {
-            document.title = `${new Date()}`
+            document.title = `${new Date()}`;
             console.log('acutalizacion del componente')
         },1000);
 
         return () => {
-            console.log('componente va a desaparecer')
-            document.title = `el tiempo se ha detenido`
+            console.log('componente va a desaparecer');
+            document.title = `el tiempo se ha detenido`;
             clearInterval(intervalId)
         };
     }, []);
